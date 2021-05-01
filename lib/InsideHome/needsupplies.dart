@@ -30,7 +30,7 @@ class _NeedSuppliesState extends State<NeedSupplies> {
             ),
             StreamBuilder(
               stream:
-                  FirebaseFirestore.instance.collection('supply').snapshots(),
+              FirebaseFirestore.instance.collection('supply').snapshots(),
               builder: (BuildContext context,
                   AsyncSnapshot<QuerySnapshot> snapshot) {
                 if (!snapshot.hasData) {
@@ -66,8 +66,8 @@ class _NeedSuppliesState extends State<NeedSupplies> {
                         print(toSearch);
                         if (toSearch.length == 1) {
                           if (document['city']
-                                  .toLowerCase()
-                                  .contains(toSearch[0].toLowerCase()) ||
+                              .toLowerCase()
+                              .contains(toSearch[0].toLowerCase()) ||
                               (oxy.contains(toSearch[0].toLowerCase()) &&
                                   document['oxygen']) ||
                               (bed.contains(toSearch[0].toLowerCase()) &&
@@ -134,94 +134,94 @@ class _NeedSuppliesState extends State<NeedSupplies> {
                                               children: [
                                                 document['oxygen']
                                                     ? Container(
-                                                        child: Text(
-                                                          "Oxygen ",
-                                                          textAlign:
-                                                              TextAlign.left,
-                                                        ),
-                                                        width: 100,
-                                                        height: 30,
-                                                      )
+                                                  child: Text(
+                                                    "Oxygen ",
+                                                    textAlign:
+                                                    TextAlign.left,
+                                                  ),
+                                                  width: 100,
+                                                  height: 30,
+                                                )
                                                     : SizedBox(
-                                                        height: 0,
-                                                      ),
+                                                  height: 0,
+                                                ),
                                                 document['bed']
                                                     ? Container(
-                                                        child: Text("Bed "),
-                                                        width: 100,
-                                                        height: 30,
-                                                      )
+                                                  child: Text("Bed "),
+                                                  width: 100,
+                                                  height: 30,
+                                                )
                                                     : SizedBox(
-                                                        height: 0,
-                                                      ),
+                                                  height: 0,
+                                                ),
                                                 document['rem']
                                                     ? Container(
-                                                        child:
-                                                            Text("Remdesivir "),
-                                                        width: 100,
-                                                        height: 30,
-                                                      )
+                                                  child:
+                                                  Text("Remdesivir "),
+                                                  width: 100,
+                                                  height: 30,
+                                                )
                                                     : SizedBox(
-                                                        height: 0,
-                                                      ),
+                                                  height: 0,
+                                                ),
                                                 document['fav']
                                                     ? Container(
-                                                        child: Text(
-                                                            "Favipiravir "),
-                                                        width: 100,
-                                                        height: 30,
-                                                      )
+                                                  child: Text(
+                                                      "Favipiravir "),
+                                                  width: 100,
+                                                  height: 30,
+                                                )
                                                     : SizedBox(
-                                                        height: 0,
-                                                      ),
+                                                  height: 0,
+                                                ),
                                               ],
                                             ),
                                             Column(
                                               children: [
                                                 document['oxygen']
                                                     ? Container(
-                                                        width: 100,
-                                                        height: 30,
-                                                        child: Text("Rs." +
-                                                            document['oxyamt']
-                                                                .toString() +
-                                                            "/unit"))
+                                                    width: 100,
+                                                    height: 30,
+                                                    child: Text("Rs." +
+                                                        document['oxyamt']
+                                                            .toString() +
+                                                        "/unit"))
                                                     : SizedBox(
-                                                        height: 0,
-                                                      ),
+                                                  height: 0,
+                                                ),
                                                 document['bed']
                                                     ? Container(
-                                                        width: 100,
-                                                        height: 30,
-                                                        child: Text("Rs." +
-                                                            document['bedamt']
-                                                                .toString() +
-                                                            "/unit"))
+                                                    width: 100,
+                                                    height: 30,
+                                                    child: Text("Rs." +
+                                                        document['bedamt']
+                                                            .toString() +
+                                                        "/unit"))
                                                     : SizedBox(
-                                                        height: 0,
-                                                      ),
+                                                  height: 0,
+                                                ),
                                                 document['rem']
                                                     ? Container(
-                                                        width: 100,
-                                                        height: 30,
-                                                        child: Text("Rs." +
-                                                            document['remamt']
-                                                                .toString() +
-                                                            "/unit"))
+                                                    width: 100,
+                                                    height: 30,
+                                                    child: Text("Rs." +
+                                                        document['remamt']
+                                                            .toString() +
+                                                        "/unit"))
                                                     : SizedBox(
-                                                        height: 0,
-                                                      ),
+                                                  height: 0,
+                                                ),
                                                 document['fav']
                                                     ? Container(
-                                                        width: 100,
-                                                        height: 30,
-                                                        child: Text("Rs." +
-                                                            document['favamt']
-                                                                .toString() +
-                                                            "/unit"))
+                                                    width: 100,
+                                                    height: 30,
+                                                    child: Text("Rs." +
+                                                        document['favamt']
+                                                            .toString() +
+                                                        "/unit"))
                                                     : SizedBox(
-                                                        height: 0,
-                                                      ),
+                                                  height: 0,
+                                                ),
                                               ],
                                             ),
                                           ],
@@ -240,10 +240,10 @@ class _NeedSuppliesState extends State<NeedSupplies> {
                         } else if (toSearch.length == 2) {
                           print("size2");
                           if (document['city']
-                                  .toLowerCase()
-                                  .contains(toSearch[0].toLowerCase()) &&
+                              .toLowerCase()
+                              .contains(toSearch[0].toLowerCase()) &&
                               ((oxy.contains(toSearch[1].toLowerCase()) &&
-                                      document['oxygen']) ||
+                                  document['oxygen']) ||
                                   (bed.contains(toSearch[1].toLowerCase()) &&
                                       document['bed']) ||
                                   (rem.contains(toSearch[1].toLowerCase()) &&
@@ -306,94 +306,94 @@ class _NeedSuppliesState extends State<NeedSupplies> {
                                               children: [
                                                 document['oxygen']
                                                     ? Container(
-                                                        child: Text(
-                                                          "Oxygen ",
-                                                          textAlign:
-                                                              TextAlign.left,
-                                                        ),
-                                                        width: 100,
-                                                        height: 30,
-                                                      )
+                                                  child: Text(
+                                                    "Oxygen ",
+                                                    textAlign:
+                                                    TextAlign.left,
+                                                  ),
+                                                  width: 100,
+                                                  height: 30,
+                                                )
                                                     : SizedBox(
-                                                        height: 0,
-                                                      ),
+                                                  height: 0,
+                                                ),
                                                 document['bed']
                                                     ? Container(
-                                                        child: Text("Bed "),
-                                                        width: 100,
-                                                        height: 30,
-                                                      )
+                                                  child: Text("Bed "),
+                                                  width: 100,
+                                                  height: 30,
+                                                )
                                                     : SizedBox(
-                                                        height: 0,
-                                                      ),
+                                                  height: 0,
+                                                ),
                                                 document['rem']
                                                     ? Container(
-                                                        child:
-                                                            Text("Remdesivir "),
-                                                        width: 100,
-                                                        height: 30,
-                                                      )
+                                                  child:
+                                                  Text("Remdesivir "),
+                                                  width: 100,
+                                                  height: 30,
+                                                )
                                                     : SizedBox(
-                                                        height: 0,
-                                                      ),
+                                                  height: 0,
+                                                ),
                                                 document['fav']
                                                     ? Container(
-                                                        child: Text(
-                                                            "Favipiravir "),
-                                                        width: 100,
-                                                        height: 30,
-                                                      )
+                                                  child: Text(
+                                                      "Favipiravir "),
+                                                  width: 100,
+                                                  height: 30,
+                                                )
                                                     : SizedBox(
-                                                        height: 0,
-                                                      ),
+                                                  height: 0,
+                                                ),
                                               ],
                                             ),
                                             Column(
                                               children: [
                                                 document['oxygen']
                                                     ? Container(
-                                                        width: 100,
-                                                        height: 30,
-                                                        child: Text("Rs." +
-                                                            document['oxyamt']
-                                                                .toString() +
-                                                            "/unit"))
+                                                    width: 100,
+                                                    height: 30,
+                                                    child: Text("Rs." +
+                                                        document['oxyamt']
+                                                            .toString() +
+                                                        "/unit"))
                                                     : SizedBox(
-                                                        height: 0,
-                                                      ),
+                                                  height: 0,
+                                                ),
                                                 document['bed']
                                                     ? Container(
-                                                        width: 100,
-                                                        height: 30,
-                                                        child: Text("Rs." +
-                                                            document['bedamt']
-                                                                .toString() +
-                                                            "/unit"))
+                                                    width: 100,
+                                                    height: 30,
+                                                    child: Text("Rs." +
+                                                        document['bedamt']
+                                                            .toString() +
+                                                        "/unit"))
                                                     : SizedBox(
-                                                        height: 0,
-                                                      ),
+                                                  height: 0,
+                                                ),
                                                 document['rem']
                                                     ? Container(
-                                                        width: 100,
-                                                        height: 30,
-                                                        child: Text("Rs." +
-                                                            document['remamt']
-                                                                .toString() +
-                                                            "/unit"))
+                                                    width: 100,
+                                                    height: 30,
+                                                    child: Text("Rs." +
+                                                        document['remamt']
+                                                            .toString() +
+                                                        "/unit"))
                                                     : SizedBox(
-                                                        height: 0,
-                                                      ),
+                                                  height: 0,
+                                                ),
                                                 document['fav']
                                                     ? Container(
-                                                        width: 100,
-                                                        height: 30,
-                                                        child: Text("Rs." +
-                                                            document['favamt']
-                                                                .toString() +
-                                                            "/unit"))
+                                                    width: 100,
+                                                    height: 30,
+                                                    child: Text("Rs." +
+                                                        document['favamt']
+                                                            .toString() +
+                                                        "/unit"))
                                                     : SizedBox(
-                                                        height: 0,
-                                                      ),
+                                                  height: 0,
+                                                ),
                                               ],
                                             ),
                                           ],
@@ -405,10 +405,10 @@ class _NeedSuppliesState extends State<NeedSupplies> {
                               ),
                             );
                           } else if (document['city']
-                                  .toLowerCase()
-                                  .contains(toSearch[1].toLowerCase()) &&
+                              .toLowerCase()
+                              .contains(toSearch[1].toLowerCase()) &&
                               ((oxy.contains(toSearch[0].toLowerCase()) &&
-                                      document['oxygen']) ||
+                                  document['oxygen']) ||
                                   (bed.contains(toSearch[0].toLowerCase()) &&
                                       document['bed']) ||
                                   (rem.contains(toSearch[0].toLowerCase()) &&
@@ -471,94 +471,94 @@ class _NeedSuppliesState extends State<NeedSupplies> {
                                               children: [
                                                 document['oxygen']
                                                     ? Container(
-                                                        child: Text(
-                                                          "Oxygen ",
-                                                          textAlign:
-                                                              TextAlign.left,
-                                                        ),
-                                                        width: 100,
-                                                        height: 30,
-                                                      )
+                                                  child: Text(
+                                                    "Oxygen ",
+                                                    textAlign:
+                                                    TextAlign.left,
+                                                  ),
+                                                  width: 100,
+                                                  height: 30,
+                                                )
                                                     : SizedBox(
-                                                        height: 0,
-                                                      ),
+                                                  height: 0,
+                                                ),
                                                 document['bed']
                                                     ? Container(
-                                                        child: Text("Bed "),
-                                                        width: 100,
-                                                        height: 30,
-                                                      )
+                                                  child: Text("Bed "),
+                                                  width: 100,
+                                                  height: 30,
+                                                )
                                                     : SizedBox(
-                                                        height: 0,
-                                                      ),
+                                                  height: 0,
+                                                ),
                                                 document['rem']
                                                     ? Container(
-                                                        child:
-                                                            Text("Remdesivir "),
-                                                        width: 100,
-                                                        height: 30,
-                                                      )
+                                                  child:
+                                                  Text("Remdesivir "),
+                                                  width: 100,
+                                                  height: 30,
+                                                )
                                                     : SizedBox(
-                                                        height: 0,
-                                                      ),
+                                                  height: 0,
+                                                ),
                                                 document['fav']
                                                     ? Container(
-                                                        child: Text(
-                                                            "Favipiravir "),
-                                                        width: 100,
-                                                        height: 30,
-                                                      )
+                                                  child: Text(
+                                                      "Favipiravir "),
+                                                  width: 100,
+                                                  height: 30,
+                                                )
                                                     : SizedBox(
-                                                        height: 0,
-                                                      ),
+                                                  height: 0,
+                                                ),
                                               ],
                                             ),
                                             Column(
                                               children: [
                                                 document['oxygen']
                                                     ? Container(
-                                                        width: 100,
-                                                        height: 30,
-                                                        child: Text("Rs." +
-                                                            document['oxyamt']
-                                                                .toString() +
-                                                            "/unit"))
+                                                    width: 100,
+                                                    height: 30,
+                                                    child: Text("Rs." +
+                                                        document['oxyamt']
+                                                            .toString() +
+                                                        "/unit"))
                                                     : SizedBox(
-                                                        height: 0,
-                                                      ),
+                                                  height: 0,
+                                                ),
                                                 document['bed']
                                                     ? Container(
-                                                        width: 100,
-                                                        height: 30,
-                                                        child: Text("Rs." +
-                                                            document['bedamt']
-                                                                .toString() +
-                                                            "/unit"))
+                                                    width: 100,
+                                                    height: 30,
+                                                    child: Text("Rs." +
+                                                        document['bedamt']
+                                                            .toString() +
+                                                        "/unit"))
                                                     : SizedBox(
-                                                        height: 0,
-                                                      ),
+                                                  height: 0,
+                                                ),
                                                 document['rem']
                                                     ? Container(
-                                                        width: 100,
-                                                        height: 30,
-                                                        child: Text("Rs." +
-                                                            document['remamt']
-                                                                .toString() +
-                                                            "/unit"))
+                                                    width: 100,
+                                                    height: 30,
+                                                    child: Text("Rs." +
+                                                        document['remamt']
+                                                            .toString() +
+                                                        "/unit"))
                                                     : SizedBox(
-                                                        height: 0,
-                                                      ),
+                                                  height: 0,
+                                                ),
                                                 document['fav']
                                                     ? Container(
-                                                        width: 100,
-                                                        height: 30,
-                                                        child: Text("Rs." +
-                                                            document['favamt']
-                                                                .toString() +
-                                                            "/unit"))
+                                                    width: 100,
+                                                    height: 30,
+                                                    child: Text("Rs." +
+                                                        document['favamt']
+                                                            .toString() +
+                                                        "/unit"))
                                                     : SizedBox(
-                                                        height: 0,
-                                                      ),
+                                                  height: 0,
+                                                ),
                                               ],
                                             ),
                                           ],
@@ -570,10 +570,10 @@ class _NeedSuppliesState extends State<NeedSupplies> {
                               ),
                             );
                           } else if (document['state']
-                                  .toLowerCase()
-                                  .contains(toSearch[1].toLowerCase()) &&
+                              .toLowerCase()
+                              .contains(toSearch[1].toLowerCase()) &&
                               ((oxy.contains(toSearch[0].toLowerCase()) &&
-                                      document['oxygen']) ||
+                                  document['oxygen']) ||
                                   (bed.contains(toSearch[0].toLowerCase()) &&
                                       document['bed']) ||
                                   (rem.contains(toSearch[0].toLowerCase()) &&
@@ -635,94 +635,94 @@ class _NeedSuppliesState extends State<NeedSupplies> {
                                               children: [
                                                 document['oxygen']
                                                     ? Container(
-                                                        child: Text(
-                                                          "Oxygen ",
-                                                          textAlign:
-                                                              TextAlign.left,
-                                                        ),
-                                                        width: 100,
-                                                        height: 30,
-                                                      )
+                                                  child: Text(
+                                                    "Oxygen ",
+                                                    textAlign:
+                                                    TextAlign.left,
+                                                  ),
+                                                  width: 100,
+                                                  height: 30,
+                                                )
                                                     : SizedBox(
-                                                        height: 0,
-                                                      ),
+                                                  height: 0,
+                                                ),
                                                 document['bed']
                                                     ? Container(
-                                                        child: Text("Bed "),
-                                                        width: 100,
-                                                        height: 30,
-                                                      )
+                                                  child: Text("Bed "),
+                                                  width: 100,
+                                                  height: 30,
+                                                )
                                                     : SizedBox(
-                                                        height: 0,
-                                                      ),
+                                                  height: 0,
+                                                ),
                                                 document['rem']
                                                     ? Container(
-                                                        child:
-                                                            Text("Remdesivir "),
-                                                        width: 100,
-                                                        height: 30,
-                                                      )
+                                                  child:
+                                                  Text("Remdesivir "),
+                                                  width: 100,
+                                                  height: 30,
+                                                )
                                                     : SizedBox(
-                                                        height: 0,
-                                                      ),
+                                                  height: 0,
+                                                ),
                                                 document['fav']
                                                     ? Container(
-                                                        child: Text(
-                                                            "Favipiravir "),
-                                                        width: 100,
-                                                        height: 30,
-                                                      )
+                                                  child: Text(
+                                                      "Favipiravir "),
+                                                  width: 100,
+                                                  height: 30,
+                                                )
                                                     : SizedBox(
-                                                        height: 0,
-                                                      ),
+                                                  height: 0,
+                                                ),
                                               ],
                                             ),
                                             Column(
                                               children: [
                                                 document['oxygen']
                                                     ? Container(
-                                                        width: 100,
-                                                        height: 30,
-                                                        child: Text("Rs." +
-                                                            document['oxyamt']
-                                                                .toString() +
-                                                            "/unit"))
+                                                    width: 100,
+                                                    height: 30,
+                                                    child: Text("Rs." +
+                                                        document['oxyamt']
+                                                            .toString() +
+                                                        "/unit"))
                                                     : SizedBox(
-                                                        height: 0,
-                                                      ),
+                                                  height: 0,
+                                                ),
                                                 document['bed']
                                                     ? Container(
-                                                        width: 100,
-                                                        height: 30,
-                                                        child: Text("Rs." +
-                                                            document['bedamt']
-                                                                .toString() +
-                                                            "/unit"))
+                                                    width: 100,
+                                                    height: 30,
+                                                    child: Text("Rs." +
+                                                        document['bedamt']
+                                                            .toString() +
+                                                        "/unit"))
                                                     : SizedBox(
-                                                        height: 0,
-                                                      ),
+                                                  height: 0,
+                                                ),
                                                 document['rem']
                                                     ? Container(
-                                                        width: 100,
-                                                        height: 30,
-                                                        child: Text("Rs." +
-                                                            document['remamt']
-                                                                .toString() +
-                                                            "/unit"))
+                                                    width: 100,
+                                                    height: 30,
+                                                    child: Text("Rs." +
+                                                        document['remamt']
+                                                            .toString() +
+                                                        "/unit"))
                                                     : SizedBox(
-                                                        height: 0,
-                                                      ),
+                                                  height: 0,
+                                                ),
                                                 document['fav']
                                                     ? Container(
-                                                        width: 100,
-                                                        height: 30,
-                                                        child: Text("Rs." +
-                                                            document['favamt']
-                                                                .toString() +
-                                                            "/unit"))
+                                                    width: 100,
+                                                    height: 30,
+                                                    child: Text("Rs." +
+                                                        document['favamt']
+                                                            .toString() +
+                                                        "/unit"))
                                                     : SizedBox(
-                                                        height: 0,
-                                                      ),
+                                                  height: 0,
+                                                ),
                                               ],
                                             ),
                                           ],
@@ -734,10 +734,10 @@ class _NeedSuppliesState extends State<NeedSupplies> {
                               ),
                             );
                           } else if (document['state']
-                                  .toLowerCase()
-                                  .contains(toSearch[0].toLowerCase()) &&
+                              .toLowerCase()
+                              .contains(toSearch[0].toLowerCase()) &&
                               ((oxy.contains(toSearch[1].toLowerCase()) &&
-                                      document['oxygen']) ||
+                                  document['oxygen']) ||
                                   (bed.contains(toSearch[1].toLowerCase()) &&
                                       document['bed']) ||
                                   (rem.contains(toSearch[1].toLowerCase()) &&
@@ -789,7 +789,7 @@ class _NeedSuppliesState extends State<NeedSupplies> {
                                       ),
                                       Container(
                                           width:
-                                              MediaQuery.of(context).size.width,
+                                          MediaQuery.of(context).size.width,
                                           child: Text(
                                             "Items Available ",
                                             style: TextStyle(
@@ -806,94 +806,94 @@ class _NeedSuppliesState extends State<NeedSupplies> {
                                             children: [
                                               document['oxygen']
                                                   ? Container(
-                                                      child: Text(
-                                                        "Oxygen ",
-                                                        textAlign:
-                                                            TextAlign.left,
-                                                      ),
-                                                      width: 100,
-                                                      height: 30,
-                                                    )
+                                                child: Text(
+                                                  "Oxygen ",
+                                                  textAlign:
+                                                  TextAlign.left,
+                                                ),
+                                                width: 100,
+                                                height: 30,
+                                              )
                                                   : SizedBox(
-                                                      height: 0,
-                                                    ),
+                                                height: 0,
+                                              ),
                                               document['bed']
                                                   ? Container(
-                                                      child: Text("Bed "),
-                                                      width: 100,
-                                                      height: 30,
-                                                    )
+                                                child: Text("Bed "),
+                                                width: 100,
+                                                height: 30,
+                                              )
                                                   : SizedBox(
-                                                      height: 0,
-                                                    ),
+                                                height: 0,
+                                              ),
                                               document['rem']
                                                   ? Container(
-                                                      child:
-                                                          Text("Remdesivir "),
-                                                      width: 100,
-                                                      height: 30,
-                                                    )
+                                                child:
+                                                Text("Remdesivir "),
+                                                width: 100,
+                                                height: 30,
+                                              )
                                                   : SizedBox(
-                                                      height: 0,
-                                                    ),
+                                                height: 0,
+                                              ),
                                               document['fav']
                                                   ? Container(
-                                                      child:
-                                                          Text("Favipiravir "),
-                                                      width: 100,
-                                                      height: 30,
-                                                    )
+                                                child:
+                                                Text("Favipiravir "),
+                                                width: 100,
+                                                height: 30,
+                                              )
                                                   : SizedBox(
-                                                      height: 0,
-                                                    ),
+                                                height: 0,
+                                              ),
                                             ],
                                           ),
                                           Column(
                                             children: [
                                               document['oxygen']
                                                   ? Container(
-                                                      width: 100,
-                                                      height: 30,
-                                                      child: Text("Rs." +
-                                                          document['oxyamt']
-                                                              .toString() +
-                                                          "/unit"))
+                                                  width: 100,
+                                                  height: 30,
+                                                  child: Text("Rs." +
+                                                      document['oxyamt']
+                                                          .toString() +
+                                                      "/unit"))
                                                   : SizedBox(
-                                                      height: 0,
-                                                    ),
+                                                height: 0,
+                                              ),
                                               document['bed']
                                                   ? Container(
-                                                      width: 100,
-                                                      height: 30,
-                                                      child: Text("Rs." +
-                                                          document['bedamt']
-                                                              .toString() +
-                                                          "/unit"))
+                                                  width: 100,
+                                                  height: 30,
+                                                  child: Text("Rs." +
+                                                      document['bedamt']
+                                                          .toString() +
+                                                      "/unit"))
                                                   : SizedBox(
-                                                      height: 0,
-                                                    ),
+                                                height: 0,
+                                              ),
                                               document['rem']
                                                   ? Container(
-                                                      width: 100,
-                                                      height: 30,
-                                                      child: Text("Rs." +
-                                                          document['remamt']
-                                                              .toString() +
-                                                          "/unit"))
+                                                  width: 100,
+                                                  height: 30,
+                                                  child: Text("Rs." +
+                                                      document['remamt']
+                                                          .toString() +
+                                                      "/unit"))
                                                   : SizedBox(
-                                                      height: 0,
-                                                    ),
+                                                height: 0,
+                                              ),
                                               document['fav']
                                                   ? Container(
-                                                      width: 100,
-                                                      height: 30,
-                                                      child: Text("Rs." +
-                                                          document['favamt']
-                                                              .toString() +
-                                                          "/unit"))
+                                                  width: 100,
+                                                  height: 30,
+                                                  child: Text("Rs." +
+                                                      document['favamt']
+                                                          .toString() +
+                                                      "/unit"))
                                                   : SizedBox(
-                                                      height: 0,
-                                                    ),
+                                                height: 0,
+                                              ),
                                             ],
                                           ),
                                         ],
